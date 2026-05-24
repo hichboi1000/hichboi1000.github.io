@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Photography Portfolio</title>
+<title>Jaydeeh Maina — Photography</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -12,7 +12,6 @@
 :root {
   --cream: #e8e4dc;
   --dark: #0d0d0d;
-  --dark2: #111;
   --muted: rgba(232,228,220,0.55);
   --very-muted: rgba(232,228,220,0.25);
 }
@@ -26,7 +25,6 @@ body {
   min-height: 100vh;
 }
 
-/* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
@@ -34,7 +32,6 @@ nav {
   background: rgba(13,13,13,0.88);
   backdrop-filter: blur(14px);
   border-bottom: 0.5px solid rgba(232,228,220,0.08);
-  transition: padding 0.3s;
 }
 
 .logo {
@@ -43,7 +40,6 @@ nav {
   letter-spacing: 0.06em;
 }
 
-/* ── EDIT THIS: Change to your name ── */
 .logo span { font-style: italic; opacity: 0.6; }
 
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
@@ -57,7 +53,6 @@ nav {
 }
 .nav-links a:hover { color: var(--cream); }
 
-/* ── HERO ── */
 .hero {
   min-height: 100vh;
   display: flex; flex-direction: column;
@@ -75,19 +70,21 @@ nav {
   gap: 2px;
 }
 
-/* ── EDIT THIS: Replace these background-colors / background-images with your actual photos ── */
-/* To use your own photos: background-image: url('photos/photo1.jpg'); background-size: cover; background-position: center; */
-.hero-mosaic .cell { background: #1a1a1a; }
-.hero-mosaic .cell:nth-child(1) { background: #1c1e28; }
-.hero-mosaic .cell:nth-child(2) { background: #1e201a; }
-.hero-mosaic .cell:nth-child(3) { background: #201c1c; }
-.hero-mosaic .cell:nth-child(4) { background: #1a1c22; }
-.hero-mosaic .cell:nth-child(5) { background: #1e1a18; }
-.hero-mosaic .cell:nth-child(6) { background: #181e1a; }
+.hero-mosaic .cell {
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-mosaic .cell:nth-child(1) { background-image: url('photos/photo1.jpg'); }
+.hero-mosaic .cell:nth-child(2) { background-image: url('photos/photo2.jpg'); }
+.hero-mosaic .cell:nth-child(3) { background-image: url('photos/photo3.jpg'); }
+.hero-mosaic .cell:nth-child(4) { background-image: url('photos/photo4.jpg'); }
+.hero-mosaic .cell:nth-child(5) { background-image: url('photos/photo5.jpg'); }
+.hero-mosaic .cell:nth-child(6) { background-image: url('photos/photo6.jpg'); }
 
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(13,13,13,0.7) 0%, rgba(13,13,13,0.3) 50%, rgba(13,13,13,0.75) 100%);
+  background: linear-gradient(135deg, rgba(13,13,13,0.75) 0%, rgba(13,13,13,0.35) 50%, rgba(13,13,13,0.8) 100%);
 }
 
 .hero-content { position: relative; z-index: 2; max-width: 700px; }
@@ -114,7 +111,7 @@ h1 em { font-style: italic; color: var(--muted); }
   font-size: 1rem;
   color: var(--muted);
   line-height: 1.75;
-  max-width: 440px;
+  max-width: 460px;
   margin-bottom: 2.5rem;
 }
 
@@ -127,7 +124,7 @@ h1 em { font-style: italic; color: var(--muted); }
   text-decoration: none;
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
-  transition: opacity 0.2s, background 0.2s, color 0.2s;
+  transition: opacity 0.2s, border-color 0.2s, color 0.2s;
   cursor: pointer;
   border: none;
 }
@@ -144,14 +141,11 @@ h1 em { font-style: italic; color: var(--muted); }
 
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-/* ── SECTIONS ── */
 section { padding: 5rem 3rem; }
 
 .section-header {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  display: flex; align-items: center;
+  gap: 1.5rem; margin-bottom: 3rem;
 }
 
 .section-label {
@@ -163,12 +157,10 @@ section { padding: 5rem 3rem; }
 }
 
 .section-line {
-  flex: 1;
-  height: 0.5px;
+  flex: 1; height: 0.5px;
   background: rgba(232,228,220,0.1);
 }
 
-/* ── GALLERY ── */
 #work { background: #0d0d0d; }
 
 .gallery {
@@ -189,28 +181,19 @@ section { padding: 5rem 3rem; }
   object-fit: cover;
   display: block;
   transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
-}
-
-/* ── EDIT THIS: swap these placeholder backgrounds with your actual photo files ── */
-/* To use a photo: <img src="photos/city.jpg" alt="City at Dusk"> */
-/* Placeholder colors until you add real photos */
-.photo-card .placeholder {
-  width: 100%; height: 100%; min-height: 260px;
-  display: block;
-  background: #1c1c1c;
+  min-height: 280px;
 }
 
 .photo-card.wide { grid-column: span 2; }
+.photo-card.wide img { min-height: 340px; }
 .photo-card.tall { grid-row: span 2; }
+.photo-card.tall img { min-height: 580px; }
 
-.photo-card:hover img,
-.photo-card:hover .placeholder { transform: scale(1.05); }
-
-.placeholder { transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
+.photo-card:hover img { transform: scale(1.05); }
 
 .photo-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, transparent 55%);
   opacity: 0;
   transition: opacity 0.35s;
   display: flex; align-items: flex-end;
@@ -230,10 +213,9 @@ section { padding: 5rem 3rem; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.55);
-  margin-top: 0.25rem;
+  margin-top: 0.3rem;
 }
 
-/* ── ABOUT ── */
 #about { background: #0f0f0f; }
 
 .about-grid {
@@ -249,16 +231,10 @@ section { padding: 5rem 3rem; }
   background: #1a1a1a;
 }
 
-/* ── EDIT THIS: Replace with your actual portrait photo ── */
-/* <img src="photos/portrait.jpg" alt="Your Name" style="width:100%;height:100%;object-fit:cover;"> */
-.about-image .placeholder-portrait {
-  width: 100%; height: 100%; min-height: 400px;
-  background: linear-gradient(160deg, #1c1c1c 0%, #141414 100%);
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(232,228,220,0.15);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.about-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 h2 {
@@ -304,10 +280,9 @@ h2 {
 .skill-value {
   font-size: 0.85rem;
   color: var(--cream);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* ── CONTACT ── */
 #contact {
   background: #111;
   border-top: 0.5px solid rgba(232,228,220,0.06);
@@ -344,7 +319,6 @@ h2 {
   border-color: rgba(232,228,220,0.5);
 }
 
-/* ── FOOTER ── */
 footer {
   text-align: center;
   padding: 2rem;
@@ -353,7 +327,6 @@ footer {
   border-top: 0.5px solid rgba(232,228,220,0.05);
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links { gap: 1.5rem; }
@@ -371,17 +344,14 @@ footer {
   .photo-card.wide { grid-column: auto; }
   .hero-mosaic { grid-template-columns: 1fr 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
+  .nav-links { gap: 1rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     NAVIGATION
-     EDIT: Change "Your Name" to your name
-═══════════════════════════════════════════ -->
 <nav>
-  <div class="logo">Your Name <span>— Photography</span></div>
+  <div class="logo">Jaydeeh Maina <span>— Photography</span></div>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
@@ -389,32 +359,20 @@ footer {
   </ul>
 </nav>
 
-
-<!-- ═══════════════════════════════════════════
-     HERO SECTION
-     EDIT: 
-     - Change the headline/description
-     - Replace .cell backgrounds with your photos:
-       style="background-image:url('photos/yourphoto.jpg'); background-size:cover;"
-═══════════════════════════════════════════ -->
 <section class="hero" id="home">
   <div class="hero-mosaic" aria-hidden="true">
-    <!-- Replace background colors with: style="background-image:url('photos/photo1.jpg');background-size:cover;background-position:center;" -->
-    <div class="cell" style="background:#1c1e28;"></div>
-    <div class="cell" style="background:#1e201a;"></div>
-    <div class="cell" style="background:#201c1c;"></div>
-    <div class="cell" style="background:#1a1c22;"></div>
-    <div class="cell" style="background:#1e1a18;"></div>
-    <div class="cell" style="background:#181e1a;"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
-
   <div class="hero-content">
     <p class="eyebrow">Photography Portfolio — Nairobi, Kenya</p>
-    <!-- EDIT: Change this headline to your own style/tagline -->
-    <h1>Capturing light,<br><em>framing stories</em></h1>
-    <!-- EDIT: Write your own short description -->
-    <p class="hero-sub">A visual journey through East African landscapes, intimate portraits, and fleeting moments — each frame shaped by light, patience, and intent.</p>
+    <h1>Capturing moments,<br><em>immortalising emotions</em></h1>
+    <p class="hero-sub">Translating experiences into still images — portraits, nature, events, street and life itself happening all around.</p>
     <div class="hero-btns">
       <a href="#work" class="btn btn-primary">View My Work →</a>
       <a href="#contact" class="btn btn-ghost">Get In Touch</a>
@@ -422,195 +380,135 @@ footer {
   </div>
 </section>
 
-
-<!-- ═══════════════════════════════════════════
-     GALLERY / WORK SECTION
-     EDIT: 
-     - Replace .placeholder divs with <img> tags pointing to your photos
-     - Change photo titles and categories
-     - Add or remove .photo-card blocks as needed
-     
-     To add a photo:
-     Remove the <div class="placeholder" style="..."></div>
-     Add: <img src="photos/yourphoto.jpg" alt="Photo description">
-     
-     Layout classes:
-     .photo-card        = standard tall card (1 column)
-     .photo-card.wide   = wide card (2 columns)
-     .photo-card.tall   = tall card (2 rows)
-═══════════════════════════════════════════ -->
 <section id="work">
   <div class="section-header">
     <span class="section-label">Selected Work</span>
     <div class="section-line"></div>
   </div>
-
   <div class="gallery">
 
-    <!-- PHOTO 1: Wide card (replace placeholder with your photo) -->
     <div class="photo-card wide">
-      <!-- REPLACE THIS with: <img src="photos/city-dusk.jpg" alt="City at Dusk"> -->
-      <div class="placeholder" style="min-height:340px; background:#1c2030; display:flex; align-items:center; justify-content:center; color:rgba(232,228,220,0.08); font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase;">Add your photo here</div>
+      <img src="photos/photo1.jpg" alt="Thirst of the Wild">
       <div class="photo-overlay">
         <div>
-          <!-- EDIT: Photo title and category -->
-          <div class="photo-title">City at Dusk</div>
-          <div class="photo-cat">Urban · 2024</div>
+          <div class="photo-title">Thirst of the Wild</div>
+          <div class="photo-cat">Wildlife / Nature Photography</div>
         </div>
       </div>
     </div>
 
-    <!-- PHOTO 2 -->
     <div class="photo-card">
-      <div class="placeholder" style="min-height:340px; background:#1e1a18; display:flex; align-items:center; justify-content:center; color:rgba(232,228,220,0.08); font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase;">Add your photo here</div>
+      <img src="photos/photo2.jpg" alt="Silent Confidence">
       <div class="photo-overlay">
         <div>
-          <div class="photo-title">Silhouette Study</div>
-          <div class="photo-cat">Portrait · 2024</div>
+          <div class="photo-title">Silent Confidence</div>
+          <div class="photo-cat">Portrait Photography</div>
         </div>
       </div>
     </div>
 
-    <!-- PHOTO 3 -->
     <div class="photo-card">
-      <div class="placeholder" style="min-height:340px; background:#1a2218; display:flex; align-items:center; justify-content:center; color:rgba(232,228,220,0.08); font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase;">Add your photo here</div>
+      <img src="photos/photo3.jpg" alt="Echoes of the Underground">
       <div class="photo-overlay">
         <div>
-          <div class="photo-title">Into the Forest</div>
-          <div class="photo-cat">Nature · 2023</div>
+          <div class="photo-title">Echoes of the Underground</div>
+          <div class="photo-cat">Event / Concert Photography</div>
         </div>
       </div>
     </div>
 
-    <!-- PHOTO 4: Tall card -->
     <div class="photo-card tall">
-      <div class="placeholder" style="min-height:690px; background:#1a1820; display:flex; align-items:center; justify-content:center; color:rgba(232,228,220,0.08); font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase;">Add your photo here</div>
+      <img src="photos/photo4.jpg" alt="Parallel Songs">
       <div class="photo-overlay">
         <div>
-          <div class="photo-title">Reflected Light</div>
-          <div class="photo-cat">Abstract · 2024</div>
+          <div class="photo-title">Parallel Songs</div>
+          <div class="photo-cat">Wildlife / Fine Art Photography</div>
         </div>
       </div>
     </div>
 
-    <!-- PHOTO 5 -->
     <div class="photo-card">
-      <div class="placeholder" style="min-height:340px; background:#201a14; display:flex; align-items:center; justify-content:center; color:rgba(232,228,220,0.08); font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase;">Add your photo here</div>
+      <img src="photos/photo5.jpg" alt="Violet Whisper">
       <div class="photo-overlay">
         <div>
-          <div class="photo-title">Golden Hour</div>
-          <div class="photo-cat">Landscape · 2023</div>
+          <div class="photo-title">Violet Whisper</div>
+          <div class="photo-cat">Macro / Nature Photography</div>
         </div>
       </div>
     </div>
 
-    <!-- PHOTO 6 -->
     <div class="photo-card">
-      <div class="placeholder" style="min-height:340px; background:#181c24; display:flex; align-items:center; justify-content:center; color:rgba(232,228,220,0.08); font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase;">Add your photo here</div>
+      <img src="photos/photo6.jpg" alt="Forged in Fire">
       <div class="photo-overlay">
         <div>
-          <div class="photo-title">Urban Lines</div>
-          <div class="photo-cat">Architecture · 2024</div>
+          <div class="photo-title">Forged in Fire</div>
+          <div class="photo-cat">Street / Industrial Photography</div>
         </div>
       </div>
     </div>
-
-    <!-- Add more photos by copying a .photo-card block above -->
 
   </div>
 </section>
 
-
-<!-- ═══════════════════════════════════════════
-     ABOUT SECTION
-     EDIT: 
-     - Replace portrait placeholder with your photo
-     - Rewrite the bio paragraphs
-     - Update skills/tools/availability
-═══════════════════════════════════════════ -->
 <section id="about">
   <div class="section-header">
     <span class="section-label">About</span>
     <div class="section-line"></div>
   </div>
-
   <div class="about-grid">
     <div class="about-image">
-      <!-- REPLACE with: <img src="photos/portrait.jpg" alt="Your Name" style="width:100%;height:100%;object-fit:cover;display:block;"> -->
-      <div class="placeholder-portrait">Your portrait photo here</div>
+      <img src="photos/photo2.jpg" alt="Jaydeeh Maina">
     </div>
-
     <div class="about-body">
-      <!-- EDIT: Your name and headline -->
-      <h2>Telling stories<br>through the lens</h2>
-
-      <!-- EDIT: Write your own bio paragraphs -->
-      <p>I'm a photographer based in Nairobi, passionate about capturing the world's raw beauty — from sweeping East African landscapes to intimate portrait work and the geometry of city life.</p>
-      <p>My approach blends documentary honesty with intentional editing. I work in both natural and controlled light, and I treat post-production as a creative act — every image is a complete vision, not just a snapshot.</p>
-      <p>Open to freelance commissions, editorial work, event coverage, and print licensing.</p>
-
+      <h2>Translating life<br>into still images</h2>
+      <p>I am Jaydeeh Maina, a creative photographer based in Nairobi, Kenya. My work is driven by a desire to translate experiences into still images — to capture moments and immortalise the emotions within them.</p>
+      <p>I love to shoot portraits, nature, events and street photography, always trying my best to capture life itself happening all around me. Every frame is an attempt to freeze something real — something felt.</p>
+      <p>Open for commissions, event coverage, portrait sessions and collaborations across Nairobi and beyond.</p>
       <div class="divider"></div>
-
-      <!-- EDIT: Update your skills, tools, and availability -->
       <div class="skills-grid">
         <div class="skill">
           <div class="skill-label">Specialities</div>
-          <div class="skill-value">Portrait<br>Landscape<br>Street</div>
+          <div class="skill-value">Portrait<br>Nature & Wildlife<br>Events & Street</div>
         </div>
         <div class="skill">
-          <div class="skill-label">Editing Tools</div>
-          <div class="skill-value">Lightroom<br>Photoshop<br>Capture One</div>
+          <div class="skill-label">Editing</div>
+          <div class="skill-value">Lightroom<br>Snapseed</div>
         </div>
         <div class="skill">
           <div class="skill-label">Equipment</div>
-          <div class="skill-value">Sony A7 IV<br>Canon R6<br>35mm Film</div>
-        </div>
-        <div class="skill">
-          <div class="skill-label">Languages</div>
-          <div class="skill-value">English<br>Swahili</div>
+          <div class="skill-value">Canon PowerShot<br>SX260 HS</div>
         </div>
         <div class="skill">
           <div class="skill-label">Based In</div>
-          <div class="skill-value">Nairobi, Kenya<br>Available to travel</div>
+          <div class="skill-value">Nairobi, Kenya</div>
         </div>
         <div class="skill">
           <div class="skill-label">Available For</div>
-          <div class="skill-value">Freelance<br>Commissions<br>Print sales</div>
+          <div class="skill-value">Freelance<br>Commissions<br>Events</div>
+        </div>
+        <div class="skill">
+          <div class="skill-label">Instagram</div>
+          <div class="skill-value">@Jaydeeh._</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ═══════════════════════════════════════════
-     CONTACT SECTION
-     EDIT: Replace email, Instagram handle, and CV link
-═══════════════════════════════════════════ -->
 <section id="contact">
   <h2>Let's work together</h2>
-  <p class="contact-sub">Open for commissions, collaborations, and print orders.</p>
-
+  <p class="contact-sub">Open for portrait sessions, event coverage, collaborations and print orders.</p>
   <div class="contact-links">
-    <!-- EDIT: Replace with your actual email -->
-    <a href="mailto:hello@yourname.com" class="contact-link">✉ hello@yourname.com</a>
-
-    <!-- EDIT: Replace with your Instagram -->
-    <a href="https://instagram.com/yourhandle" target="_blank" class="contact-link">◎ @yourhandle</a>
-
-    <!-- EDIT: Link to your CV PDF if you have one, or remove this link -->
-    <a href="cv.pdf" class="contact-link">↓ Download CV</a>
+    <a href="mailto:Jaymaina85@gmail.com" class="contact-link">✉ Jaymaina85@gmail.com</a>
+    <a href="https://instagram.com/Jaydeeh._" target="_blank" class="contact-link">◎ @Jaydeeh._</a>
+    <a href="tel:+254788384558" class="contact-link">✆ 0788 384 558</a>
   </div>
 </section>
 
-
-<!-- ═══════════════════════════════════════════
-     FOOTER
-     EDIT: Your name and year
-═══════════════════════════════════════════ -->
 <footer>
-  © 2025 Your Name · Photography · All rights reserved
+  © 2025 Jaydeeh Maina · Photography · All rights reserved
 </footer>
 
 </body>
 </html>
+
